@@ -1,6 +1,12 @@
 # Eduardo Vargas - Blackthorn project
 
 This project was generated using  [NX](https://nx.dev/)
+
+To Run question 1: npm run start
+To Run question 2: npm run start2
+
+and do a post to  http://localhost:3000/api/notifications/sms or  http://localhost:3000/api/notifications/email
+
 For this project there were two questions:
 
 
