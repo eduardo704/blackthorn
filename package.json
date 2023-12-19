@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "npx nx run question1:serve "
+    "start": "npx nx run question1:serve",
+    "start2": "npx nx run question-2:serve "
   },
   "private": true,
   "dependencies": {
