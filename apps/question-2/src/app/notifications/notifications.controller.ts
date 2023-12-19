@@ -1,19 +1,19 @@
 import { Controller, Post } from '@nestjs/common';
-import { GoodNotificationSender } from './sender/notification.sender';
+import { NotificationSender } from './sender/notification.sender';
 
 @Controller('notifications')
 export class NotificationsController {
-  constructor(private readonly goodNotificationSender: GoodNotificationSender) {}
+  constructor(private readonly notificationSender: NotificationSender) {}
 
   @Post('email')
   sendEmail() {
-    this.goodNotificationSender.sendNotification('email message', 'eduardo704@gmail.com', 'email');
+    this.notificationSender.sendNotification('email message', 'eduardo704@gmail.com', 'email');
     return 'message sent to email';
   }
 
   @Post('sms')
   sendSms() {
-    this.goodNotificationSender.sendNotification('text messsage', '+551194554545', 'sms');
+    this.notificationSender.sendNotification('text messsage', '+551194554545', 'sms');
     return 'message sent to sms';
   }
 }
