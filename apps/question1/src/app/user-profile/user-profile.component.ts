@@ -1,0 +1,15 @@
+import { Component } from '@angular/core';
+import { UserProfileService } from './user-profile.service';
+
+@Component({
+  selector: 'user-profile',
+  templateUrl: './user-profile.component.html',
+  styleUrl: './user-profile.component.scss',
+})
+export class UserProfileComponent {
+  userName: string;
+
+  constructor(private userProfileService: UserProfileService) {
+    this.userName = this.userProfileService.getUsername();
+  }
+}

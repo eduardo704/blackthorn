@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { UserProfileModule } from './user-profile/user-profile.module';
 
 @Component({
-  standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
+ 
   selector: 'blackthorn-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'question1';
-}
+export class AppComponent {}

@@ -2,7 +2,9 @@
   "name": "@blackthorn/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "npx nx run question1:serve "
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~17.0.0",
