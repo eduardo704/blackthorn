@@ -1,0 +1,53 @@
+{
+  "name": "question-2",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/question-2/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/question-2",
+        "main": "apps/question-2/src/main.ts",
+        "tsConfig": "apps/question-2/tsconfig.app.json",
+        "assets": ["apps/question-2/src/assets"],
+        "webpackConfig": "apps/question-2/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "question-2:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "question-2:build:development"
+        },
+        "production": {
+          "buildTarget": "question-2:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/question-2/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}
